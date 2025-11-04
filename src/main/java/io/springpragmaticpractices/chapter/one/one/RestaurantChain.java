@@ -1,4 +1,4 @@
-package io.springpragmaticpractices.chapter.one;
+package io.springpragmaticpractices.chapter.one.one;
 
 import lombok.Getter;
 
