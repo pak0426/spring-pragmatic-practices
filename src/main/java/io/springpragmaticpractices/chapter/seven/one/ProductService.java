@@ -1,4 +1,4 @@
-package io.springpragmaticpractices.chapter.seven;
+package io.springpragmaticpractices.chapter.seven.one;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
