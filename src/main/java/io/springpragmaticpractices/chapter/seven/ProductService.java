@@ -18,7 +18,7 @@ public class ProductService {
         Product product = productJpaRepository.getById(productId);
         List<Coupon> coupons = couponJpaRepository.getByUserId(userId);
 
-        PriceManager priceManager = new PriceManager();
-        return priceManager.calculate(user, product, coupons);
+        Cashier cashier = new Cashier();
+        return cashier.calculate(user, product, coupons);
     }
 }
