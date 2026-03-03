@@ -18,24 +18,7 @@ public class ProductService {
         Product product = productJpaRepository.getById(productId);
         List<Coupon> coupons = couponJpaRepository.getByUserId(userId);
 
-        // 최대 할인율 찾기
-        Coupon target;
-        for (Coupon coupon : target) {
-            if (target == null || coupon.getDiscount() > target.getDiscount()) {
-                target = coupon;
-            }
-        }
-
-        // 적용 가능한 쿠폰이 있다면 적용한다.
-        int price = product.getPrice();
-        if (target != null) {
-            int discountAmount = price * target.getDiscount();
-            price -= discountAmount;
-        }
-
-        // 사용자 마일리지 반영
-        price -= user.getMileage();
-
-        return price;
+        PriceManager priceManager = new PriceManager();
+        return priceManager.calculate(user, product, coupons);
     }
 }
