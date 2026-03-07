@@ -25,4 +25,8 @@ public class User {
     private UserStatus status;
     @Column
     private String verificationCode;
+
+    public boolean isPending() {
+        return status == UserStatus.PENDING;
+    }
 }
