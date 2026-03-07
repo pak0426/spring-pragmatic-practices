@@ -1,9 +1,7 @@
-package io.springpragmaticpractices.chapter.eleven;
+package io.springpragmaticpractices.chapter.eleven.one;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
