@@ -2,7 +2,6 @@ package io.springpragmaticpractices.chapter.forteen;
 
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
