@@ -2,7 +2,6 @@ package io.springpragmaticpractices.chapter.forteen.four;
 
 import io.springpragmaticpractices.chapter.forteen.User;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.util.ArrayList;
 
