@@ -6,16 +6,10 @@ import io.springpragmaticpractices.chapter.forteen.UserStatus;
 
 import java.util.Optional;
 
-public class StubExistUserRepository implements UserRepository {
+public class StubEmptyRepository implements UserRepository {
 
     public Optional<User> findByEmail(String email) {
-        return Optional.of(User.builder()
-                .id(1L)
-                .email(email)
-                .nickname("foobar")
-                .status(UserStatus.ACTIVE)
-                .verificationCode("aaaaaaaaaaaaaaaaa")
-                .build());
+        return Optional.empty();
     }
 
     public User save(User user) {
@@ -29,3 +23,5 @@ public class StubExistUserRepository implements UserRepository {
     }
 }
 
+
+}
