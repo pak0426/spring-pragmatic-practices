@@ -17,6 +17,11 @@ public class UserService {
 
     @Transactional
     public User register(UserCreateDto userCreateDto) {
+
+        if (userRepository.findByEmail(userCreateDto.getEmail()).isPresent()) {
+            throw new DuplicatedEmailException();
+        }
+
         User user = User.builder()
                 .email(userCreateDto.getEmail())
                 .nickname(userCreateDto.getNickname())
