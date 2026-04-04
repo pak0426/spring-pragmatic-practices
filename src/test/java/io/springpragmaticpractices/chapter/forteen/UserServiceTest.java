@@ -13,7 +13,7 @@ class UserServiceTest {
     private UserRepository userRepository;
 
     @Test
-    public void 이메일_회워가입을_하면_가입_보류_상태가_된다() {
+    public void 이메일_회원가입을_하면_가입_보류_상태가_된다() {
         // given
         UserCreateDto userCreateDto = UserCreateDto.builder()
                 .email("email@email.com")
