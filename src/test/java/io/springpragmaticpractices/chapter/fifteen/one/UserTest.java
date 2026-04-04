@@ -18,11 +18,11 @@ class UserTest {
                 .build();
 
         // when
-        user.login();
+        long currentTimestamp = Clock.systemUTC().millis();
+        user.login(currentTimestamp);
 
         // then
-        long expected = Clock.systemUTC().millis();
-        assertThat(user.getLastLoginTimestamp()).isEqualTo(expected);
+        assertThat(user.getLastLoginTimestamp()).isEqualTo(currentTimestamp);
     }
 
     @Test
@@ -33,7 +33,8 @@ class UserTest {
                 .build();
 
         // when
-        user.login();
+        long currentTimestamp = Clock.systemUTC().millis();
+        user.login(currentTimestamp);
 
         // then
         long expected = Clock.systemUTC().millis();

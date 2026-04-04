@@ -12,8 +12,8 @@ public class User {
     private String email;
     private long lastLoginTimestamp;
 
-    public void login() {
+    public void login(long currentTimestamp) {
         // ...
-        this.lastLoginTimestamp = Clock.systemUTC().millis();
+        this.lastLoginTimestamp = currentTimestamp;
     }
 }
