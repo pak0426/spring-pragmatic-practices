@@ -1,5 +1,8 @@
 package io.springpragmaticpractices.chapter.fifteen.one;
 
+import io.springpragmaticpractices.chapter.forteen.UserRepository;
+import io.springpragmaticpractices.chapter.forteen.UserService;
+import io.springpragmaticpractices.chapter.forteen.three.FakeUserRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -39,5 +42,24 @@ class UserTest {
         // then
         long expected = Clock.systemUTC().millis();
         assertThat(user.getLastLoginTimestamp()).isGreaterThan(0);
+    }
+
+    @Test
+    public void 로그인을_호출할_경우_사용자의_마지막_로그인_시각이_갱신된다() {
+        // given
+        UserRepository userRepository = new FakeUserRepository();
+        userRepository.save(User.builder()
+                .email("foobar@email.com")
+                .build());
+
+        // when
+        UserService userService = UserService.builder()
+                .userRepository(userRepository)
+                .build();
+        User result = userService.login("foobar@email.com");
+
+        // then
+        long expected = ???; // 기대값은 어떤게 들어가야할까???
+        assertThat(result.getLastLoginTimestamp()).isEqualsTo(expected);
     }
 }
