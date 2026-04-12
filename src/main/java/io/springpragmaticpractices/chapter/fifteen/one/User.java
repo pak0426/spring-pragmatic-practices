@@ -15,5 +15,6 @@ public class User {
     public void login(ClockHolder clockHolder) {
         // ...
         this.lastLoginTimestamp = clockHolder.now();
+        System.out.println("User(" + email + ") login!");
     }
 }
