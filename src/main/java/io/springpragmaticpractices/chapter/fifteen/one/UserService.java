@@ -11,10 +11,11 @@ import java.time.Clock;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final ClockHolder clockHolder;
 
     public User login(String email) {
         User user = userRepository.getByEmail(email);
-        user.login(Clock.systemUTC().millis());
+        user.login(clockHolder.now());
         user = userRepository.save(user);
         return user;
     }
