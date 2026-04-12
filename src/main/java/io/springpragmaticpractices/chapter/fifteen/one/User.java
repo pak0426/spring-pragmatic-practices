@@ -12,8 +12,8 @@ public class User {
     private String email;
     private long lastLoginTimestamp;
 
-    public void login(long currentTimestamp) {
+    public void login(ClockHolder clockHolder) {
         // ...
-        this.lastLoginTimestamp = currentTimestamp;
+        this.lastLoginTimestamp = clockHolder.now();
     }
 }
