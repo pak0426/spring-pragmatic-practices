@@ -12,9 +12,11 @@ public class User {
     private String email;
     private long lastLoginTimestamp;
 
-    public void login(ClockHolder clockHolder) {
+    public LoginSuccess login(ClockHolder clockHolder) {
         // ...
         this.lastLoginTimestamp = clockHolder.now();
-        System.out.println("User(" + email + ") login!");
+        return LoginSuccess.builder()
+                .auditMessage("User(" + email + ") login!")
+                .build();
     }
 }
